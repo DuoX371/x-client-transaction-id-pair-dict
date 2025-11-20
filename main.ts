@@ -18,7 +18,8 @@ for (let i = 0; i < max; i++) {
   console.log(`${i} / ${max}`);
   try {
     const session = await createSession(browser, undefined);
-    const animationKey = await session.key("GET", "/i/api/graphql/_8aYOgEDz35BrBcBal1-_w/TweetDetail");
+    const keyConverter = await session.initKeyConverter();
+    const animationKey = await keyConverter();
     dict.push({
       animationKey: animationKey.split("obfiowerehiring")[1],
       verification: session.verification,
